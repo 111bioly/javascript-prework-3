@@ -1,0 +1,53 @@
+body {
+    width: 1500px;
+    text-align: center;
+    margin: auto;
+    
+}
+header  {
+    height: 100vh;
+    position: relative;
+    background-image: url('https://cdn.galleries.smcloud.net/t/galleries/gf-b5FG-vpYA-iVBP_papier-kamien-nozyce-1920x1080-nocrop.jpg');
+    background-position: 50% 20%;
+    background-size: cover; 
+    background-attachment: fixed;
+    
+}
+.container{
+    padding-top: 8%;
+    font-size: x-large;
+    
+}
+button {
+    margin-top: 100px;
+    margin-right: 20px;
+    padding: 20px 40px;
+    border-radius: 10%;
+    box-shadow: 1px 2px 4px 4px #000000;
+    color: #0000ff;
+    cursor: pointer;
+    font-size: 20px;
+}
+#messages {
+    text-align: left;
+    margin-left: 50%;
+    padding-top: 20px;
+    color: #0000ff;
+}
+#messages-red {
+    color: #ff0000;
+    margin-left: 50%;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+#messages-green {
+    color: #008000;
+    margin-left: 20%;
+}
+#messages-win {
+    color: #0feb58;
+    margin-left: 50%;
+    padding-top: 10px;
+    font-size: 50px;
+}
