@@ -1,4 +1,4 @@
-function getMoveName(argPlayerInput){
+function playGame(argPlayerInput){
     
     clearMessages();{
         document.getElementById('buttons');
@@ -70,12 +70,12 @@ function getMoveName(argPlayerInput){
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
-    getMoveName('1');
+    playGame(1);
 });
 document.getElementById('play-paper').addEventListener('click', function(){
-    getMoveName('2');
+    playGame(2);
 });
 document.getElementById('play-scissors').addEventListener('click', function(){
-    getMoveName('3');
+    playGame(3);
 });
 
