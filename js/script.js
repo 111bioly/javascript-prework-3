@@ -1,74 +1,44 @@
-function playGame(argPlayerInput){
-    
-    clearMessages();{
-        document.getElementById('buttons');
-    }
-    clearMessagesRed();{
-        document.getElementById('buttons');
-    }
-    
-    clearMessagesGreen();{
-        document.getElementById('buttons');
-    }
-    clearMessagesWin();{
-        document.getElementById('buttons');
-    }
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+{const playGame = function(argPlayerInput){
+    clearMessagesAll();
 
-    console.log('Wylosowana liczba to: ' + randomNumber);
-
-    let argComputerMove = getMoveName(randomNumber);
-
-    function getMoveName(argComputerMove){
-        if(argComputerMove == 1){
+    const getMoveName = function (randomNumber){
+        if(randomNumber == 1){
         return 'kamień';
         } 
-        if(argComputerMove == 2){
+        if(randomNumber == 2){
         return 'papier';
         } 
-        if(argComputerMove == 3){
+        if(randomNumber == 3){
         return 'nożyce';
         } else {
-        printMessage('Nie znam ruchu o id ' + argComputerMove + '.');
+        colorMessages('Nie znam ruchu o id ' + randomNumber + '.', 'blue');
         return 'nieznany ruch';
         }
     }
-    
+
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('Wylosowana liczba to: ' + randomNumber);
+    const argComputerMove =  getMoveName(randomNumber);
+
     console.log('Gracz wpisał: ' + argPlayerInput);
-
-    let argPlayerMove = getMoveName(argPlayerInput);
-
-    function getMoveName(argPlayerMove){
-        if(argPlayerMove == 1){
-            return 'kamień';
-        }
-        if(argPlayerMove == 2){
-            return 'papier';
-        }
-        if(argPlayerMove == 3){
-            return 'nożyce';
-        } else {
-            printMessageRed('Nie znam ruchu o id ' + argPlayerMove + '.');
-            return 'nieznany ruch';
-        }
-    }
-        
-    function displayResult(argComputerMove, argPlayerMove){
-        printMessage('Zagrałem ' + argComputerMove);
-        printMessageGreen(' a Ty ' + argPlayerMove);
+    const argPlayerMove = getMoveName(argPlayerInput)
+    
+    const displayResult = function(argComputerMove, argPlayerMove){
+        colorMessages('Zagrałem ' + argComputerMove, 'blue');
+        colorMessages(' a Ty ' + argPlayerMove, 'green');
         if (( argComputerMove == 'kamień' && argPlayerMove == 'papier')
             || ( argComputerMove == 'papier' && argPlayerMove == 'nożyce')
             || ( argComputerMove == 'nożyce' && argPlayerMove == 'kamień')){
-            printMessageWin('Ty wygrywasz!');
+                colorMessages('Ty wygrywasz!', 'win');
         } else if ( argComputerMove == argPlayerMove){
-            printMessageRed('Remis');
+            colorMessages('Remis', 'red');
         } else {
-            printMessageRed('Tym razem przegrywasz :(');
+            colorMessages('Tym razem przegrywasz :(', 'red');
         }
     }
     displayResult(argComputerMove, argPlayerMove);
-}
 
+}
 document.getElementById('play-rock').addEventListener('click', function(){
     playGame(1);
 });
@@ -79,3 +49,4 @@ document.getElementById('play-scissors').addEventListener('click', function(){
     playGame(3);
 });
 
+}
